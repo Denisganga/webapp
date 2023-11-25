@@ -154,6 +154,12 @@
        <form method="post" action="{% url 'authentication:login' %}">
             {% csrf_token %}
         <h2>Login</h2>
+
+        
+        {% if error_message %}
+        <p style="color: red;">{{ error_message }}</p>
+        {% endif %}
+
         <div class="inputbox">
           <ion-icon name="mail-outline"></ion-icon>
           <input type="text" name= "fname" required>
@@ -175,13 +181,10 @@
               </div>
               
           </label>
-          <label>
-            <a href="#">Forgot password?</a>
-          </label>
         </div>
         <button>Log in</button>
         <div class="register">
-          <p>Don't have a account ? <a href="#">Register</a></p>
+          <p>Don't have a account ? <a href="{% url 'authentication:register' %}">Register</a></p>
         </div>
       </form>
     </div>

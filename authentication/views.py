@@ -38,6 +38,7 @@ def Register(request):
 
 
 def  Login(request):
+    error_message=None
     if request.method =='POST':
         username=request.POST.get('fname')
         password=request.POST.get('pwd')
@@ -54,9 +55,9 @@ def  Login(request):
             return redirect('home_page:mainpage')   
         
         else:
-            return HttpResponse("error. the user does not exist")
+            error_message=("ERROR: the user does not exist")
 
 
 
 
-    return render(request,'login.html', {})
+    return render(request,'login.html', {'error_message':error_message})
