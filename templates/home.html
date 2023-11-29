@@ -278,7 +278,36 @@
           width: 100%;
       }
 
-
+      .home-section .container {
+        max-width: 800px;
+        margin: 50px auto;
+        background-color: #fff;
+        padding: 20px;
+        border-radius: 8px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+    
+    .home-section h1, h2 {
+        color: #333;
+    }
+    
+    .home-section ul {
+        list-style-type: none;
+        padding: 0;
+    }
+    
+    .home-section button {
+        padding: 10px;
+        background-color: #4CAF50;
+        color: #fff;
+        border: none;
+        cursor: pointer;
+        border-radius: 4px;
+    }
+    
+    .home-section button:hover {
+        background-color: #45a049;
+    }
 
 
 
@@ -389,7 +418,49 @@
 </script>
 
 <p>Welcome to your Plant Health Dashboard. Here, you can analyze and diagnose plant diseases, find remedies, and connect with experts. Let's make our green friends healthier together!</p>
+
+
 </div>
+<div class="container">
+  <h1>Plant Doctor Dashboard</h1>
+
+  <!-- Image Upload Section -->
+  <div id="image-upload">
+      <h2>Upload Image</h2>
+      <p>Follow the guidelines below to upload an image of the crop disease:</p>
+      <ul>
+          <li>Use a high-quality image.</li>
+          <li>Focus on the affected area.</li>
+          <!-- Add more guidelines as needed -->
+      </ul>
+      <input type="file" id="image-input" accept="image/*">
+      <button onclick="uploadImage()">Submit</button>
+  </div>
+
+  <!-- Model Results Section -->
+  <div id="model-results" style="display:none;">
+      <h2>Model Results</h2>
+      <p>Results from the plant disease model:</p>
+      <div id="result-container"></div>
+  </div>
+
+  <!-- Chat and Suggestions Section -->
+  <div id="chat-suggestions" style="display:none;">
+      <h2>Chat and Suggestions</h2>
+      <div id="chat-container"></div>
+      <div id="suggestions-container"></div>
+  </div>
+
+  <!-- Agrovet Section -->
+  <div id="agrovet" style="display:none;">
+      <h2>Agrovet</h2>
+      <p>Explore and purchase medicines for the crop disease:</p>
+      <!-- Add Agrovet content and links here -->
+  </div>
+</div>
+
+
+
 </section>
 <!-- partial -->
   <script>
@@ -417,8 +488,51 @@ function menuBtnChange() {
 
 
 
+function uploadImage() {
+  // Handle image upload logic here
+  // You may want to use AJAX to send the image to your Django backend
+  // Display model results after receiving them
+  displayModelResults();
+}
+
+function displayModelResults() {
+  // Display model results and toggle visibility of sections
+  document.getElementById('image-upload').style.display = 'none';
+  document.getElementById('model-results').style.display = 'block';
+
+  // Fetch and display model results in the result-container
+  // Replace the following line with your actual logic to fetch and display results
+  document.getElementById('result-container').innerHTML = '<p>Model results will be displayed here.</p>';
+
+  // After displaying results, show the chat and suggestions section
+  displayChatAndSuggestions();
+}
+
+function displayChatAndSuggestions() {
+  // Display chat and suggestions section
+  document.getElementById('chat-suggestions').style.display = 'block';
+
+  // Integrate with ChatGPT to show chat messages
+  // Replace the following line with your actual logic to fetch and display chat messages
+  document.getElementById('chat-container').innerHTML = '<p>Chat messages will be displayed here.</p>';
+
+  // Integrate with ChatGPT or provide static suggestions
+  // Replace the following line with your actual logic to fetch and display suggestions
+  document.getElementById('suggestions-container').innerHTML = '<p>Suggestions will be displayed here.</p>';
+
+  // After displaying chat and suggestions, show the agrovet section
+  document.getElementById('agrovet').style.display = 'block';
+}
+
+
 
   </script>
+
+
+  
+
+
+  
 
 <div class="footer">
     <p>&copy; 2023 created by Denis . All rights reserved.</p>
