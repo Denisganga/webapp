@@ -85,17 +85,20 @@ git checkout -b feature-or-bugfix-branch
 git commit -m "Your commit message here"
 ```
 
-Push the changes to your fork:
+4. Push the changes to your fork:
 
-bash
+```bash
 
     git push origin feature-or-bugfix-branch
+```
 
-    Create a pull request on GitHub.
+5. Create a pull request on GitHub.
 
-Future Development
+### Future Development
 
 I plan to return and continue working on this project to enhance its features and functionality. Feel free to check back for updates.
 License
 
-This project is licensed under the MIT License.
+### License
+
+This project is licensed under the [MIT_license](MIT_license).
