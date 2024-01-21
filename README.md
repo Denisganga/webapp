@@ -73,7 +73,7 @@ Contribution to this project is welcomed. If you would like to contribute to the
 
 2. Create a new branch for your feature or bug fix:
 
-    ```bash
+```bash
 
 git checkout -b feature-or-bugfix-branch
 ```
